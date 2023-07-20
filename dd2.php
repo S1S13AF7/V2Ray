@@ -1,5 +1,5 @@
 <?php
-$ver="23.07.20.6";
+$ver="23.07.20.7";
 $prxs = []; #пусто
 $text = isset($_POST['text'])?(string)$_POST['text']:'';
 @header('Content-Type: text/html; charset=utf-8', true);
@@ -17,23 +17,6 @@ if(!empty($_POST['text']))
 		$prxs["$hash"] = $line;
 		} #shadowsocks?! 
 	
-		if (preg_match('#^vmess://(.+)#ui',$line,$v)){
-		if($vmess=base64_decode($v[1])){
-		$tmp = json_decode($vmess,true);
-		if (is_array($tmp)) { /*FIX?!?*/
-		$s_name = @$tmp["ps"];#"ps":name
-		$f_hash = 'vmess://';//.=bla.bla
-		unset($tmp["ps"]); ksort($tmp);
-		foreach($tmp as $k=>$v){
-		if(!$v)unset($tmp[$k]);}
-		ksort($tmp);/*сортуємо*/
-		$fshh=implode("&",$tmp);
-		$hash=md5($fshh);	#	всеодно воно фіговенько працює,да;
-		$prxs["$hash"] = $line; 
-		} #json_decoded. Array;
-		} #base64
-		} #vmess
-		
 		if (preg_match('#^ss://([0-9A-z\_\-\+\=]+)\@([0-9A-z\_\-\.]+)\:([0-9]+)\#.+#ui',$line,$v)){
 		#[0] => ss://str@str:int#bla [1] => base64 [2] => ip_or_url [3] => port
 		if($mp=array_filter(explode(":",base64_decode($v[1])))){/*decode $m:$p*/
@@ -50,6 +33,21 @@ if(!empty($_POST['text']))
 		}//decoded($m:$p)
 		} #shadowsocks
 		
+		if (preg_match('#^vmess://(.+)#ui',$line,$v)){
+		if($vmess=base64_decode($v[1])){
+		$tmp = json_decode($vmess,true);
+		if (is_array($tmp)) { /*FIX?!?*/
+		$s_name = @$tmp["ps"];#"ps":name
+		$f_hash = Array(); @ksort($tmp);
+		foreach($tmp as $k=>$bla)
+		if(($k=='add' || $k=='host' || $k=='id' || $k=='net' || $k=='path' || $k=='port' || $k=='type') && $bla){$f_hash[$k]=$bla;}
+		$fshh=implode("&",$f_hash);
+		$hash=md5($fshh);	#	❗❗
+		$prxs["$hash"] = $line; 
+		} #json_decoded. Array;
+		} #base64
+		} #vmess
+		
 		if(preg_match('#^(vless|trojan)://([0-9A-z\_\-\+\=]+)\@([0-9A-z\_\-\.]+)\:([0-9]+)\/?\?([0-9A-z\_\-\+\=\&\/\%\.]+)#ui',$line,$v)){
 		#[0] => (string) [1] => prt [2] => bla [3] => ip_or_url [4] => port [5] => prms
 		$s_name = str_replace('+','%20',@stristr($line,'#')); #server name +fix for ' '
@@ -58,6 +56,7 @@ if(!empty($_POST['text']))
 					@ksort($prms);
 		$v[5]=@implode("&",$prms); }
 		$hash=md5("$v[1]://$v[2]@$v[3]:$v[4]?$v[5]");
+		$line="$v[1]://$v[2]@$v[3]:$v[4]?$v[5]".$s_name;
 		$prxs["$hash"]=$line;
 		}#VLESS|trojan
 
