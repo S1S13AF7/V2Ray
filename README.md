@@ -4,9 +4,9 @@
 
 #dd1 (old): https://freebestshoes.000webhostapp.com/dedub/dd1.php
 
+#dd2 (new): http://v2ray.misc.pp.ua/dd2.php [OR]
 #dd2 (new): https://freebestshoes.000webhostapp.com/dedub/dd2.php
 
-#dd2 (new): http://v2ray.misc.pp.ua/dd2.php
 
 (in processing...)
 
