@@ -1,4 +1,4 @@
-# V2Ray ss vmess VLESS trojan
+# 
 
 #dd (dedublication) -diblicate proxy (beta)
 
@@ -17,7 +17,7 @@ http://v2ray.misc.pp.ua/sub/2S.php
 (so-ok. need more coding&tests)
 (in processing...)
 
-recomeded clients: 
+recomended clients: 
 
 [Android] V2RayNG or V2FLY or Matsuri
 [windows] V2RayN (5.x or 6.x)
