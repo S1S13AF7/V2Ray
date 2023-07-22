@@ -1,6 +1,6 @@
 <?php
 #мегапідписка#beta
-$ver="23.07.20.7";
+$ver="23.07.22.10";
 #v2023.7.19.6#beta
 $prxs = []; #пусто
 $ress = []; #пусто
@@ -52,7 +52,7 @@ if ($text = file_get_contents($link)){
 		$s_name = @$tmp["ps"];#"ps":name
 		$f_hash = Array(); @ksort($tmp);
 		foreach($tmp as $k=>$bla)
-		if(($k=='add' || $k=='host' || $k=='id' || $k=='net' || $k=='path' || $k=='port' || $k=='type') && $bla){$f_hash[$k]=$bla;}
+		if(($k=='add' || $k=='host' || $k=='id' || $k=='net' || $k=='path' || $k=='port' || $k=='sni' || $k=='type') && $bla){$f_hash[$k]=$bla;}
 		$fshh=implode("&",$f_hash);
 		$hash=md5($fshh);	#	❗❗
 		$prxs["$hash"] = $line; 

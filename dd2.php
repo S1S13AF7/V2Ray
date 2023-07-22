@@ -1,5 +1,5 @@
 <?php
-$ver="23.07.20.7";
+$ver="23.07.22.10";
 $prxs = []; #пусто
 $text = isset($_POST['text'])?(string)$_POST['text']:'';
 @header('Content-Type: text/html; charset=utf-8', true);
@@ -40,7 +40,7 @@ if(!empty($_POST['text']))
 		$s_name = @$tmp["ps"];#"ps":name
 		$f_hash = Array(); @ksort($tmp);
 		foreach($tmp as $k=>$bla)
-		if(($k=='add' || $k=='host' || $k=='id' || $k=='net' || $k=='path' || $k=='port' || $k=='type') && $bla){$f_hash[$k]=$bla;}
+		if(($k=='add' || $k=='host' || $k=='id' || $k=='net' || $k=='path' || $k=='port' || $k=='sni' || $k=='type') && $bla){$f_hash[$k]=$bla;}
 		$fshh=implode("&",$f_hash);
 		$hash=md5($fshh);	#	❗❗
 		$prxs["$hash"] = $line; 
