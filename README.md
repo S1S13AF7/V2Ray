@@ -7,11 +7,11 @@
 (in processing...)
 
 "MegaSub" aka 2S (beta):
-res[]='https://raw.githubusercontent.com/S1S13AF7/V2Ray/main/928862_118408423.txt';
-res[]='https://raw.githubusercontent.com/sashalsk/V2Ray/main/V2Ray-list-current';
-(and more) // S&S -> 2S. 
-try [dd2] [beta]:
-http://v2try.misc.pp.ua/sub/2S.php
+
+[*] http://v2try.misc.pp.ua/sub/2S.php<br/>
+[*] https://v2try.000webhostapp.com/sub/2S.php<br/>
+[*] https://freebestshoes.000webhostapp.com/sub/2S.php</br>
+[*] mirrors (content A=B=C; if version A=C);<br/>
 (so-ok. need more coding&tests)
 (in processing...)
 
