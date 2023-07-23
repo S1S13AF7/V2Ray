@@ -81,6 +81,11 @@ echo '<?xml version="1.0" encoding="utf-8"?>';
     <form method="post" action="?">
     <textarea name="text" style="max-width:98%;min-height:13em;width:98%" placeholder="Shadowsocks,Trojan,Vmess,VLESS"><?php echo $text; ?></textarea><br />
     <input type="submit" name="send" value="try" style="font-weight: bold; font-size: 16px;" /><br/>
-  </div><h5 style="color:gray;">[<a href="https://github.com/S1S13AF7/V2Ray" target="_blank">code</a>]</h5>
+  </div><h5 style="color:gray;">[<a href="https://github.com/S1S13AF7/V2Ray" target="_blank">code</a>;
+		<a href="https://freebestshoes.000webhostapp.com/dedub/dd1.php" target="_blank">dd1(old)</a>;
+		<b style="color:RoyalBlue; text-decoration:underline;"><u>dd2</u></b>;
+		<a href="/sub/2S.php" target="_blank">sub.2S</a>;
+		<a href="https://4pda.to/forum/index.php?showtopic=928862" target="_blank">VPN Club</a>]
+  </h5>
  </body>
 </html>
