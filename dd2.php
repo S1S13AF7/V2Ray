@@ -74,7 +74,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>';
 <style type="text/css">
 	html { color: RoyalBlue; padding: 1%; text-align: center; }
 	body { background: WhiteSmoke; margin:auto; max-width:320px; padding: 8px; }
-</style>
+</style><title>dd2_v<?php echo $ver; ?></title>
 </head><body>
   <h2 style="margin-top: 1px;">dd2_v<?php echo $ver; ?><br/>ss,trojan,vmess,VLESS</h2>
   <div class="form">
